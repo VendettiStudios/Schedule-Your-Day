@@ -36,4 +36,14 @@ function background(){
         }
     
     });}
+    // save button, saves users input, and connects it to a time within the local storage
+
+    $(".saveBtn").on("click", function(){
+        userInput = $(this).siblings(".description").val().trim();
+        console.log(userInput);
+        hours = $(this).siblings().text().trim();
+        console.log(hours)
+        localStorage.setItem(hours, JSON.stringify(userInput));
+    })
+
     
