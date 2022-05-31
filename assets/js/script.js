@@ -15,9 +15,20 @@ $('#currentDay').html(day);
 // gets current time
 let hoursNow = moment().hour();
 
+// goes through timeblocks array to compare numbers to current time
+let TimeBlocks = $(".container").children();
+background()
+// save button, saves users input, and connects it to a time within the local storage
+
+$(".saveBtn").on("click", function () {
+    userInput = $(this).siblings(".description").val().trim();
+    console.log(userInput);
+    hours = $(this).siblings().text().trim();
+    console.log(hours)
+    localStorage.setItem(hours, JSON.stringify(userInput));
+})
 
 // gets saved information from local storage
-
 initPage()
 function initPage() {
     console.log("hours" + " " + hoursNow);
@@ -30,16 +41,16 @@ function initPage() {
 
     let init11 = JSON.parse(localStorage.getItem("11 AM"));
     elevenAM.val(init11);
-    
+
     let init12 = JSON.parse(localStorage.getItem("12 PM"));
     twelveAM.val(init12);
-    
+
     let init13 = JSON.parse(localStorage.getItem("1 PM"));
     onePM.val(init13);
-    
+
     let init14 = JSON.parse(localStorage.getItem("2 PM"));
     twoPM.val(init14);
-    
+
     let init15 = JSON.parse(localStorage.getItem("3 PM"));
     threePM.val(init15);
 
@@ -51,32 +62,21 @@ function initPage() {
 }
 
 // sets background color based off time of day, past present & future colors
-function background(){
-    TimeBlocks.each(function() 
-    {
+function background() {
+    TimeBlocks.each(function () {
         let hour = parseInt($(this).attr("data-hour").split('-')[0]);
-    
+
         console.log(hour)
-    
-        if(hour < hoursNow) {
+
+        if (hour < hoursNow) {
             $(this).addClass("past");
         }
-        else if(hour === hoursNow){
+        else if (hour === hoursNow) {
             $(this).addClass("present")
         }
         else {
             $(this).addClass("future")
         }
-    
-    });}
-    // save button, saves users input, and connects it to a time within the local storage
 
-    $(".saveBtn").on("click", function(){
-        userInput = $(this).siblings(".description").val().trim();
-        console.log(userInput);
-        hours = $(this).siblings().text().trim();
-        console.log(hours)
-        localStorage.setItem(hours, JSON.stringify(userInput));
-    })
-
-
+    });
+}
