@@ -1,4 +1,4 @@
-#Schedule-your-day
+# Schedule-your-day
 Github: https://github.com/VendettiStudios
 
 Live Demo: https://vendettistudios.github.io/Schedule-your-day/
