@@ -6,5 +6,5 @@ Live Demo: https://vendettistudios.github.io/Schedule-Your-Day/
 
 This app is to display the past present and future via color, and to allow the user to input within rows todos, that they can save and attach to certain times.
 
-#Author
+# Author
 [Daniel Holloway](https://danielholloway.dev)
